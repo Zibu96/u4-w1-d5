@@ -1,9 +1,9 @@
 package entities;
 
-import interfaces.Lumos;
-import interfaces.Volume;
+import interfaces.*;
 
-public class Video extends ElementoRiproducibile implements Volume, Lumos {
+public class Video extends ElementoRiproducibile
+        implements Volume, Lumos, AlzaVolume, AbbassaVolume, AlzaLumos, AbbassaLumos {
     private int lumin;
 
     public Video(String name, int durata, int volume, int lumin) {
@@ -46,6 +46,30 @@ public class Video extends ElementoRiproducibile implements Volume, Lumos {
 
     public void setLumin(int lumin) {
         this.lumin = lumin;
+    }
+
+    @Override
+    public void alzaVolume() {
+        this.volume = this.volume + 1;
+        System.out.println("il nuovo volume è" + this.volume);
+    }
+
+    @Override
+    public void abbassaVolume() {
+        this.volume = this.volume - 1;
+        System.out.println("il nuovo volume è" + this.volume);
+    }
+
+    @Override
+    public void abbassaLumos() {
+        this.lumin = this.lumin + 1;
+        System.out.println("La nuova luminosità è " + this.lumin);
+    }
+
+    @Override
+    public void alzaLumos() {
+        this.lumin = this.lumin - 1;
+        System.out.println("La nuova luminosità è " + this.lumin);
     }
 }
 

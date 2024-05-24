@@ -1,8 +1,10 @@
 package entities;
 
+import interfaces.AbbassaVolume;
+import interfaces.AlzaVolume;
 import interfaces.Volume;
 
-public class Audio extends ElementoRiproducibile implements Volume {
+public class Audio extends ElementoRiproducibile implements Volume, AlzaVolume, AbbassaVolume {
 
 
     public Audio(String name, int durata, int volume) {
@@ -18,6 +20,7 @@ public class Audio extends ElementoRiproducibile implements Volume {
         }
     }
 
+
     @Override
     public void play() {
         String[] dur = new String[durata];
@@ -31,4 +34,15 @@ public class Audio extends ElementoRiproducibile implements Volume {
     }
 
 
+    @Override
+    public void alzaVolume() {
+        this.volume = this.volume + 1;
+        System.out.println("il nuovo volume è" + this.volume);
+    }
+
+    @Override
+    public void abbassaVolume() {
+        this.volume = this.volume - 1;
+        System.out.println("il nuovo volume è" + this.volume);
+    }
 }

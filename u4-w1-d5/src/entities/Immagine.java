@@ -1,9 +1,11 @@
 package entities;
 
+import interfaces.AbbassaLumos;
+import interfaces.AlzaLumos;
 import interfaces.Lumos;
 
 
-public class Immagine extends ElementoMultimediale implements Lumos {
+public class Immagine extends ElementoMultimediale implements Lumos, AlzaLumos, AbbassaLumos {
     private int lumin;
 
     public Immagine(String name, int lumin) {
@@ -29,5 +31,18 @@ public class Immagine extends ElementoMultimediale implements Lumos {
 
     public void setLumin(int lumin) {
         this.lumin = lumin;
+
+    }
+
+    @Override
+    public void abbassaLumos() {
+        this.lumin = this.lumin + 1;
+        System.out.println("La nuova luminosità è " + this.lumin);
+    }
+
+    @Override
+    public void alzaLumos() {
+        this.lumin = this.lumin - 1;
+        System.out.println("La nuova luminosità è " + this.lumin);
     }
 }

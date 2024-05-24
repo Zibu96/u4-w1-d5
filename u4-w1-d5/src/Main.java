@@ -13,9 +13,14 @@ public class Main {
         Video video1 = new Video("gattini", 6, 4, 2);
         Immagine img1 = new Immagine("foto", 6);
 
-//        img1.show();
-//        video1.play();
-//        el1.play();
+        img1.show();
+        video1.play();
+        el1.play();
+
+        el1.alzaVolume();
+        img1.abbassaLumos();
+        video1.abbassaVolume();
+        video1.alzaLumos();
 
         Scanner scanner = new Scanner(System.in);
         ElementoMultimediale[] multi = new ElementoMultimediale[5];
